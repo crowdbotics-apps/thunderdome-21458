@@ -4,19 +4,20 @@ from django.db import models
 
 class Prompt(models.Model):
     "Generated Model"
-    title = models.CharField(
-        max_length=256,
-    )
     content = models.TextField(
         null=True,
         blank=True,
     )
-    wordcount = models.PositiveSmallIntegerField(
+    closedate = models.DateTimeField(
         null=True,
         blank=True,
-        max_length=256,
     )
-    closedate = models.DateTimeField(
+    wordcount = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+    )
+    title = models.CharField(
+        max_length=1000,
         null=True,
         blank=True,
     )
