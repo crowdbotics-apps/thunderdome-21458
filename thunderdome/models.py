@@ -12,13 +12,20 @@ class Prompt(models.Model):
         blank=True,
     )
     wordcount = models.PositiveSmallIntegerField(
-        max_length=256,
         null=True,
         blank=True,
+        max_length=256,
     )
     closedate = models.DateTimeField(
         null=True,
         blank=True,
+    )
+
+
+class Story(models.Model):
+    "Generated Model"
+    title = models.CharField(
+        max_length=1000,
     )
 
 
