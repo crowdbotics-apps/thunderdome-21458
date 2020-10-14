@@ -1,6 +1,6 @@
 from rest_framework import authentication
-from thunderdome.models import Prompt, Story
-from .serializers import PromptSerializer, StorySerializer
+from thunderdome.models import Prompt, Scores, Story
+from .serializers import PromptSerializer, ScoresSerializer, StorySerializer
 from rest_framework import viewsets
 
 
@@ -20,3 +20,12 @@ class StoryViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Story.objects.all()
+
+
+class ScoresViewSet(viewsets.ModelViewSet):
+    serializer_class = ScoresSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Scores.objects.all()
